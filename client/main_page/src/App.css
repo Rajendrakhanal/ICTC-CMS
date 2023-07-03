@@ -1,0 +1,33 @@
+/* @import url("https://cdn.syncfusion.com/ej2/material.css"); */
+:root {
+  --main-bg-color: #0000ff;
+  --main-text-color: #0000ff;
+  --second-text-color: #bbbec5;
+  --second-bg-color: #66ccff;
+}
+.flex {
+  display: grid;
+  grid-template-columns: auto;
+}
+.flex-item {
+  justify-content: space-evenly;
+  margin: 1rem;
+  text-align: justify;
+}
+.banner {
+  background-image: radial-gradient(
+      rgba(0, 0, 0, 0),
+      rgba(255, 255, 255, 0.164)
+    ),
+    url("./Home/images/n.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  align-items: center;
+}
+@media screen and (min-width: 600px) {
+  .flex-item {
+    margin: 3rem;
+    padding: 1rem;
+  }
+}
