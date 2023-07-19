@@ -1,0 +1,24 @@
+version: "3.9"
+
+services:
+  mongo_db:
+    container_name: db_container
+    image: mongo:latest
+    ports:
+      - 2717:27017
+    restart: always
+    volumes:
+      - mongo_db:/data/db
+
+  # Node API service
+  api:
+    build: .
+    ports:
+      - 8000:8000
+    environment:
+      MONGO_DB: mongodb://mongo_db:27017/ictc
+    depends_on:
+      - mongo_db
+
+volumes:
+  mongo_db: {}
