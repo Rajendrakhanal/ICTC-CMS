@@ -12,7 +12,7 @@ services:
 
   # Node API service
   api:
-    build: .
+    build: './server/'
     ports:
       - 8000:8000
     environment:
@@ -20,5 +20,10 @@ services:
     depends_on:
       - mongo_db
 
+  client:
+    build: './client/main_page/'
+    ports:
+      - 3000:3000
+  
 volumes:
-  mongo_db: {}
+  mongo_db: {}  
