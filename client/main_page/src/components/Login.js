@@ -3,13 +3,15 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SideBar from "./SideBar";
 
+import env from "react-dotenv";
+
 const Login = () => {
   const [credential, setCredential] = useState({ email: "", password: "" });
   let navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch(`http://localhost:8000/users/login`, {
+    const response = await fetch(`${env.BACKEND_URL}/users/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -2,13 +2,15 @@ import React from 'react'
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import env from "react-dotenv";
+
 const AddAdmin = () => {
     const [credential, setCredential] = useState({name:"", email: "", password: "" });
     let navigate = useNavigate();
   
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch(`http://localhost:8000/users/signin`, {
+        const response = await fetch(`${env.BACKEND_URL}/users/signin`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
