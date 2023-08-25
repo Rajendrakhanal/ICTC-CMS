@@ -2,13 +2,15 @@ import React from 'react'
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import env from "react-dotenv";
+
 const AddRegisterUser = () => {
     const [credential, setCredential] = useState({username: "", password: "" });
     let navigate = useNavigate();
   
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch(`http://localhost:8000/credentials/new`, {
+        const response = await fetch(`${env.BACKEND_URL}/credentials/new`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
