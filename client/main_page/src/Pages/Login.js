@@ -23,7 +23,7 @@ const Login = () => {
     console.log("Verifying");
     e.preventDefault();
     let { username, password } = cred;
-    let res = await fetch("http://localhost:8000/credentials/verify", {
+    let res = await fetch("http://localhost:5000/credentials/verify", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -14,7 +14,7 @@ services:
   api:
     build: './server/'
     ports:
-      - 8000:8000
+      - 5000:8000
     environment:
       MONGO_DB: mongodb://mongo_db:27017/ictc
     depends_on:

